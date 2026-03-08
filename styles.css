@@ -1,0 +1,81 @@
+/* Rawdah Foundation — Custom Styles */
+
+/* Animations */
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+    animation: fade-up 1s ease-out forwards;
+}
+
+/* Reveal on scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navbar solid state */
+.navbar-solid {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Lightbox */
+#lightbox.active {
+    display: flex;
+}
+
+#lightbox img {
+    animation: lightbox-in 0.3s ease-out;
+}
+
+@keyframes lightbox-in {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Progress bar animation */
+.progress-bar {
+    transition: width 1.5s ease-out;
+}
+
+/* Gallery hover effect */
+.gallery-item img {
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover img {
+    opacity: 0.85;
+    transform: scale(1.02);
+}
+
+/* Selection color */
+::selection {
+    background: rgba(45, 138, 78, 0.3);
+    color: inherit;
+}
+
+/* Subtle pattern overlay for hero */
+#hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+}

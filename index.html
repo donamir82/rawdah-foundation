@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rawdah Foundation — Building Communities, Transforming Lives</title>
+    <meta name="description" content="Rawdah Foundation empowers communities through education, faith, and compassion. Support our mission to build mosques, orphanages, and brighter futures in Bangladesh.">
+    <link rel="icon" type="image/png" href="images/logo-white.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50:'#eef7f1', 100:'#d5eadb', 200:'#aad5b8', 300:'#6fb88a', 400:'#2d8a4e', 500:'#1a6b3a', 600:'#155a30', 700:'#114a28', 800:'#0d3a1f', 900:'#0a2a17' },
+                        dark: '#1a1a2e',
+                        gold: '#d4a843',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center gap-3">
+                    <img src="images/logo-white.png" alt="Rawdah Foundation" class="h-12">
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="nav-link text-white/80 hover:text-white transition-colors text-sm font-medium tracking-wide uppercase">About</a>
+                    <a href="#projects" class="nav-link text-white/80 hover:text-white transition-colors text-sm font-medium tracking-wide uppercase">Projects</a>
+                    <a href="#donate" class="nav-link text-white/80 hover:text-white transition-colors text-sm font-medium tracking-wide uppercase">Donate</a>
+                    <a href="#contact" class="nav-link text-white/80 hover:text-white transition-colors text-sm font-medium tracking-wide uppercase">Contact</a>
+                    <a href="#donate" class="bg-gold hover:bg-yellow-600 text-dark px-5 py-2.5 rounded-lg text-sm font-semibold transition-all hover:shadow-lg">Donate Now</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white p-2" aria-label="Open menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark/95 backdrop-blur-lg border-t border-white/10">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#about" class="block text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide uppercase">About</a>
+                <a href="#projects" class="block text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide uppercase">Projects</a>
+                <a href="#donate" class="block text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide uppercase">Donate</a>
+                <a href="#contact" class="block text-white/80 hover:text-white py-2 text-sm font-medium tracking-wide uppercase">Contact</a>
+                <a href="#donate" class="block bg-gold hover:bg-yellow-600 text-dark text-center px-5 py-2.5 rounded-lg text-sm font-semibold mt-2">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="images/mosque-hero.jpg" alt="Mosque render" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/60 to-dark/80"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <div class="animate-fade-up">
+                <span class="inline-block text-primary-300 text-sm font-semibold tracking-[0.2em] uppercase mb-6">Rawdah Foundation</span>
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+                    Building Communities.<br>
+                    <span class="text-primary-300">Transforming Lives.</span>
+                </h1>
+                <p class="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Empowering through education, faith, and compassion — creating lasting change in the lives of individuals and communities.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#donate" class="bg-gold hover:bg-yellow-600 text-dark px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5">
+                        Support Our Mission
+                    </a>
+                    <a href="#projects" class="border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all hover:bg-white/10">
+                        Our Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <span class="text-primary-500 text-sm font-semibold tracking-[0.15em] uppercase">Who We Are</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-6">Our Mission</h2>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                        At Rawdah Foundation, we believe in the transformative power of compassion, education, and faith. With a heart dedicated to serving others and a deep commitment to spiritual growth, we strive to create lasting change in the lives of individuals and communities.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-lg mb-8">
+                        Our mission is to empower through education, vocational training, and the cultivation of strong moral values. By working together, we can build resilient communities and inspire a future where everyone has the opportunity to thrive, both in this life and the next.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-primary-50 rounded-full flex items-center justify-center">
+                            <svg class="w-7 h-7 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Founded by Sharaf Ahmed</p>
+                            <p class="text-sm text-gray-500">Plano, TX, USA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-primary-50 rounded-2xl p-8 text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">1</div>
+                            <div class="text-sm text-gray-600 font-medium">Active Project</div>
+                        </div>
+                        <div class="bg-primary-50 rounded-2xl p-8 text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">$35K</div>
+                            <div class="text-sm text-gray-600 font-medium">Current Goal</div>
+                        </div>
+                        <div class="bg-primary-50 rounded-2xl p-8 text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">🇧🇩</div>
+                            <div class="text-sm text-gray-600 font-medium">Bangladesh</div>
+                        </div>
+                        <div class="bg-primary-50 rounded-2xl p-8 text-center">
+                            <div class="text-3xl font-bold text-primary-600 mb-2">100%</div>
+                            <div class="text-sm text-gray-600 font-medium">Goes to Projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary-500 text-sm font-semibold tracking-[0.15em] uppercase">What We Do</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Our Projects</h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Making a difference, one community at a time</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Mosque Project -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow reveal group">
+                    <div class="relative overflow-hidden">
+                        <img src="images/mosque-front-view.jpg" alt="Mosque construction" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-primary-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Active Project</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-2">Build a Mosque</h3>
+                        <p class="text-sm text-gray-500 mb-3 flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Village Borogusha, Sylhet, Bangladesh
+                        </p>
+                        <p class="text-gray-600 mb-5">Help us complete a mosque for a growing community in rural Bangladesh. The foundation, pillars, and roof are in place — we need your support to finish.</p>
+                        
+                        <!-- Progress bar -->
+                        <div class="mb-5">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="font-semibold text-gray-700">Progress</span>
+                                <span class="font-semibold text-primary-600">$14,000 / $35,000</span>
+                            </div>
+                            <div class="h-3 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="progress-bar h-full bg-gradient-to-r from-primary-400 to-primary-600 rounded-full" data-width="40" style="width: 0%"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-3">
+                            <a href="#mosque-detail" class="flex-1 text-center border-2 border-primary-500 text-primary-600 hover:bg-primary-50 px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">Learn More</a>
+                            <a href="#donate" class="flex-1 text-center bg-gold hover:bg-yellow-600 text-dark px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors">Donate Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orphanage (Coming Soon) -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg reveal opacity-90">
+                    <div class="relative overflow-hidden">
+                        <img src="images/orphanage-rawdah.jpg" alt="Future orphanage" class="w-full h-64 object-cover grayscale-[30%]">
+                        <span class="absolute top-4 left-4 bg-gray-500 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Coming Soon</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-bold text-gray-900 mb-2">New Orphanage</h3>
+                        <p class="text-sm text-gray-500 mb-3 flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Location TBD, Bangladesh
+                        </p>
+                        <p class="text-gray-600 mb-5">Providing a loving home and quality education for orphaned children. We're planning our next major initiative to support the most vulnerable members of our community.</p>
+                        <div class="mb-5">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="font-semibold text-gray-400">Goal to be announced</span>
+                            </div>
+                            <div class="h-3 bg-gray-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-gray-200 rounded-full w-0"></div>
+                            </div>
+                        </div>
+                        <button disabled class="w-full text-center bg-gray-100 text-gray-400 px-4 py-2.5 rounded-lg text-sm font-semibold cursor-not-allowed">Details Coming Soon</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mosque Detail Section -->
+    <section id="mosque-detail" class="py-24 bg-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary-300 text-sm font-semibold tracking-[0.15em] uppercase">Featured Project</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">Build a Mosque</h2>
+                <p class="text-white/60 text-lg max-w-xl mx-auto">Village Borogusha, Thana Gowainghat, District Sylhet, Bangladesh</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="reveal">
+                    <p class="text-white/80 leading-relaxed text-lg mb-6">
+                        Help us complete a mosque for a growing community in rural Bangladesh. The land has been secured, and construction is already underway — the foundation, pillars, and roof are in place. Now we need your support to finish what we've started.
+                    </p>
+                    <p class="text-white/80 leading-relaxed text-lg mb-6">
+                        When complete, this mosque will serve hundreds of local villagers, while its prime location along a major road and near a college means it will also welcome travelers and students seeking a place to worship.
+                    </p>
+                    <p class="text-white/80 leading-relaxed text-lg mb-8">
+                        The remaining work includes the prayer hall, wudu (ablution) area, and living quarters for the Imam and Muazzin. Your contribution won't just build walls — it will build a spiritual home for a community that needs one.
+                    </p>
+
+                    <!-- Goal Progress -->
+                    <div class="bg-white/5 backdrop-blur rounded-2xl p-6 mb-8">
+                        <div class="flex justify-between text-sm mb-3">
+                            <span class="text-white/60 font-medium">Fundraising Goal</span>
+                            <span class="text-gold font-bold text-lg">$14,000 / $35,000</span>
+                        </div>
+                        <div class="h-4 bg-white/10 rounded-full overflow-hidden">
+                            <div class="progress-bar h-full bg-gradient-to-r from-gold to-yellow-400 rounded-full" data-width="40" style="width: 0%"></div>
+                        </div>
+                        <p class="text-white/40 text-sm mt-3">40% of our goal reached</p>
+                    </div>
+
+                    <a href="#donate" class="inline-block bg-gold hover:bg-yellow-600 text-dark px-8 py-4 rounded-lg text-lg font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5">
+                        Donate to This Project →
+                    </a>
+                </div>
+
+                <!-- Photo Gallery -->
+                <div class="reveal">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="col-span-2 cursor-pointer gallery-item" data-index="0">
+                            <img src="images/mosque-hero.jpg" alt="Completed mosque vision" class="w-full h-56 object-cover rounded-xl hover:opacity-90 transition-opacity">
+                            <p class="text-white/40 text-xs mt-1.5">Completed Vision (3D Render)</p>
+                        </div>
+                        <div class="cursor-pointer gallery-item" data-index="1">
+                            <img src="images/mosque-front-view.jpg" alt="Front view progress" class="w-full h-36 object-cover rounded-xl hover:opacity-90 transition-opacity">
+                            <p class="text-white/40 text-xs mt-1.5">Current Progress</p>
+                        </div>
+                        <div class="cursor-pointer gallery-item" data-index="2">
+                            <img src="images/mosque-front-view-2.jpg" alt="Front view" class="w-full h-36 object-cover rounded-xl hover:opacity-90 transition-opacity">
+                            <p class="text-white/40 text-xs mt-1.5">Front View</p>
+                        </div>
+                        <div class="cursor-pointer gallery-item" data-index="3">
+                            <img src="images/mosque-construction-1.jpg" alt="Construction phase" class="w-full h-36 object-cover rounded-xl hover:opacity-90 transition-opacity">
+                            <p class="text-white/40 text-xs mt-1.5">Construction Phase</p>
+                        </div>
+                        <div class="cursor-pointer gallery-item" data-index="4">
+                            <img src="images/mosque-construction-2.jpg" alt="Foundation work" class="w-full h-36 object-cover rounded-xl hover:opacity-90 transition-opacity">
+                            <p class="text-white/40 text-xs mt-1.5">Foundation & Structure</p>
+                        </div>
+                        <div class="cursor-pointer gallery-item" data-index="5">
+                            <img src="images/mosque-roadside-view.jpg" alt="Roadside location" class="w-full h-36 object-cover rounded-xl hover:opacity-90 transition-opacity">
+                            <p class="text-white/40 text-xs mt-1.5">Roadside Location</p>
+                        </div>
+                        <div class="cursor-pointer gallery-item" data-index="6">
+                            <img src="images/mosque-location-map.jpg" alt="Location map" class="w-full h-36 object-cover rounded-xl hover:opacity-90 transition-opacity">
+                            <p class="text-white/40 text-xs mt-1.5">Location Map</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center" onclick="closeLightbox(event)">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/70 hover:text-white text-4xl z-10">&times;</button>
+        <button onclick="prevImage(event)" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-5xl z-10">&#8249;</button>
+        <button onclick="nextImage(event)" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-5xl z-10">&#8250;</button>
+        <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg">
+        <p id="lightbox-caption" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 text-sm"></p>
+    </div>
+
+    <!-- Donate Section -->
+    <section id="donate" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary-500 text-sm font-semibold tracking-[0.15em] uppercase">Make a Difference</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Support Our Mission</h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Every contribution, no matter the size, brings us closer to completing our projects and serving communities in need.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- PayPal -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center reveal hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <svg class="w-8 h-8 text-blue-600" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-3">Donate via PayPal</h3>
+                    <p class="text-gray-500 mb-6">Fast, secure online payment. Support our projects with a one-time or recurring donation.</p>
+                    <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors w-full">
+                        Donate with PayPal
+                    </a>
+                    <p class="text-gray-400 text-xs mt-3">PayPal integration coming soon</p>
+                </div>
+
+                <!-- Bank Transfer -->
+                <div class="bg-gray-50 rounded-2xl p-8 text-center reveal hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-primary-50 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-gray-900 mb-3">Bank Transfer</h3>
+                    <p class="text-gray-500 mb-6">For bank transfer or Zelle, please contact us directly and we'll provide the details.</p>
+                    <a href="mailto:rawdahfoundation@gmail.com?subject=Donation%20Inquiry" class="inline-block bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors w-full">
+                        Contact for Details
+                    </a>
+                    <p class="text-gray-400 text-xs mt-3">rawdahfoundation@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 reveal">
+                <div class="inline-flex items-center gap-2 bg-primary-50 text-primary-700 px-6 py-3 rounded-full text-sm font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    100% of your donation goes directly to our projects
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary-500 text-sm font-semibold tracking-[0.15em] uppercase">Reach Out</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Get In Touch</h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Have questions or want to learn more about our work? We'd love to hear from you.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                <div class="reveal">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Email</h3>
+                                <a href="mailto:rawdahfoundation@gmail.com" class="text-primary-600 hover:text-primary-700 transition-colors">rawdahfoundation@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-1">Location</h3>
+                                <p class="text-gray-600">Plano, TX, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 p-6 bg-white rounded-2xl">
+                        <p class="text-gray-600 italic leading-relaxed">
+                            "By working together, we can build resilient communities and inspire a future where everyone has the opportunity to thrive."
+                        </p>
+                        <p class="text-sm text-gray-400 mt-3">— Sharaf Ahmed, Founder</p>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <form action="https://formspree.io/f/rawdahfoundation@gmail.com" method="POST" class="bg-white rounded-2xl p-8 shadow-sm">
+                        <div class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1.5">Your Name</label>
+                                <input type="text" name="name" id="name" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all" placeholder="Enter your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
+                                <input type="email" name="email" id="email" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
+                                <textarea name="message" id="message" rows="5" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all resize-none" placeholder="How can we help?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary-500 hover:bg-primary-600 text-white px-6 py-3.5 rounded-lg font-semibold transition-colors">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <img src="images/logo-white.png" alt="Rawdah Foundation" class="h-10 mb-5">
+                    <p class="text-white/50 leading-relaxed text-sm">
+                        Empowering communities through education, faith, and compassion. Creating lasting change, one project at a time.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#about" class="text-white/50 hover:text-white transition-colors text-sm">About Us</a></li>
+                        <li><a href="#projects" class="text-white/50 hover:text-white transition-colors text-sm">Our Projects</a></li>
+                        <li><a href="#mosque-detail" class="text-white/50 hover:text-white transition-colors text-sm">Build a Mosque</a></li>
+                        <li><a href="#donate" class="text-white/50 hover:text-white transition-colors text-sm">Donate</a></li>
+                        <li><a href="#contact" class="text-white/50 hover:text-white transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2.5 text-sm text-white/50">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <a href="mailto:rawdahfoundation@gmail.com" class="hover:text-white transition-colors">rawdahfoundation@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Plano, TX, USA
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-white/30 text-sm">© 2025 Rawdah Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
