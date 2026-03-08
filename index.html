@@ -319,13 +319,16 @@
         </p>
         <!-- Suggested Amounts -->
         <div class="flex flex-wrap justify-center gap-4 mb-10">
-          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="selectAmount(this)">$25</button>
-          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="selectAmount(this)">$50</button>
-          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg active" onclick="selectAmount(this)">$100</button>
-          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="selectAmount(this)">$500</button>
-          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="selectAmount(this)">Custom</button>
+          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="selectAmount(this, 25)">$25</button>
+          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="selectAmount(this, 50)">$50</button>
+          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg active" onclick="selectAmount(this, 100)">$100</button>
+          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="selectAmount(this, 500)">$500</button>
+          <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="showCustomAmount()">Custom</button>
         </div>
-        <a href="https://www.paypal.me/sharafahmed82" target="_blank" class="inline-block bg-gold-400 hover:bg-gold-500 text-green-900 px-12 py-5 rounded-full font-bold text-xl transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl mb-6">
+        <div id="custom-amount-box" class="hidden mb-8">
+          <input id="custom-amount" type="number" min="1" placeholder="Enter amount in USD" class="px-6 py-3 rounded-full text-center text-lg text-green-900 font-semibold w-48 focus:outline-none focus:ring-2 focus:ring-gold-400" oninput="selectedDonation = this.value">
+        </div>
+        <a href="#" onclick="donatePayPal(event)" class="inline-block bg-gold-400 hover:bg-gold-500 text-green-900 px-12 py-5 rounded-full font-bold text-xl transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl mb-6 cursor-pointer">
           Donate via PayPal
         </a>
         <p class="text-white/50 text-sm mt-6">
@@ -458,9 +461,24 @@
     });
 
     // Donate amount selection
-    function selectAmount(btn) {
+    let selectedDonation = 100;
+    function selectAmount(btn, amount) {
       document.querySelectorAll('.donate-amount').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      selectedDonation = amount;
+      document.getElementById('custom-amount-box').classList.add('hidden');
+    }
+    function showCustomAmount() {
+      document.querySelectorAll('.donate-amount').forEach(b => b.classList.remove('active'));
+      document.getElementById('custom-amount-box').classList.remove('hidden');
+      document.getElementById('custom-amount').focus();
+      selectedDonation = '';
+    }
+    function donatePayPal(e) {
+      e.preventDefault();
+      const amount = selectedDonation || document.getElementById('custom-amount').value;
+      if (!amount || amount <= 0) { alert('Please select or enter a donation amount'); return; }
+      window.open('https://www.paypal.me/sharafahmed82/' + amount + 'USD', '_blank');
     }
 
     // Lightbox
