@@ -56,7 +56,7 @@
     .stat-card { transition: transform 0.3s ease; }
     .stat-card:hover { transform: translateY(-5px); }
     .donate-amount { transition: all 0.3s ease; cursor: pointer; }
-    .donate-amount:hover, .donate-amount.active { background: #1B5E20; color: white; transform: scale(1.05); }
+    .donate-amount:hover, .donate-amount.active { background: white; color: #1B5E20; border-color: white; transform: scale(1.05); font-weight: 700; }
     .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 100; align-items: center; justify-content: center; }
     .lightbox.active { display: flex; }
     @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(196,151,42,0.3); } 50% { box-shadow: 0 0 40px rgba(196,151,42,0.6); } }
@@ -326,7 +326,7 @@
           <button class="donate-amount border-2 border-white/30 text-white px-8 py-3 rounded-full font-semibold text-lg" onclick="showCustomAmount()">Custom</button>
         </div>
         <div id="custom-amount-box" class="hidden mb-8">
-          <input id="custom-amount" type="number" min="1" placeholder="Enter amount in USD" class="px-6 py-3 rounded-full text-center text-lg text-green-900 font-semibold w-48 focus:outline-none focus:ring-2 focus:ring-gold-400" oninput="selectedDonation = this.value">
+          <input id="custom-amount" type="number" min="1" placeholder="Enter amount in USD" class="px-6 py-3 rounded-full text-center text-lg text-green-900 font-semibold w-72 focus:outline-none focus:ring-2 focus:ring-gold-400" oninput="selectedDonation = this.value">
         </div>
         <a href="#" onclick="donatePayPal(event)" class="inline-block bg-gold-400 hover:bg-gold-500 text-green-900 px-12 py-5 rounded-full font-bold text-xl transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl mb-6 cursor-pointer">
           Donate via PayPal
