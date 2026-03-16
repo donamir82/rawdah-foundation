@@ -1,0 +1,23 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  # 10 second timeout for PayPal webhooks
+  timeout = 10
+
+[[headers]]
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE"
+
+# Enable GitHub Pages deployment
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[context.production.environment]
+  # GitHub token will be set in Netlify dashboard
+  # GITHUB_TOKEN = "your_token_here"
+  # PAYPAL_WEBHOOK_ID = "your_webhook_id_here"

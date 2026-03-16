@@ -24,6 +24,70 @@ mobileMenu.querySelectorAll('a').forEach(link => {
     });
 });
 
+// ========== Donation Progress ==========
+async function loadDonationProgress() {
+    try {
+        // Fetch donation data with cache busting
+        const response = await fetch('./donations.json?t=' + Date.now());
+        if (!response.ok) {
+            throw new Error('Failed to load donation data');
+        }
+        
+        const donationData = await response.json();
+        updateDonationDisplay(donationData);
+    } catch (error) {
+        console.error('Error loading donation progress:', error);
+        // Fall back to default values if fetch fails
+        updateDonationDisplay({
+            current_amount: 20000,
+            goal_amount: 45000,
+            total_donors: 0
+        });
+    }
+}
+
+function updateDonationDisplay(data) {
+    const currentAmount = data.current_amount || 0;
+    const goalAmount = data.goal_amount || 45000;
+    const progressPercentage = Math.round((currentAmount / goalAmount) * 100);
+    
+    // Format amounts with commas
+    const formattedCurrent = currentAmount.toLocaleString();
+    const formattedGoal = goalAmount.toLocaleString();
+    
+    // Update donation text
+    const donationText = document.querySelector('.donation-progress-text');
+    if (donationText) {
+        donationText.textContent = `Raised: $${formattedCurrent} / Goal: $${formattedGoal}`;
+    }
+    
+    // Update progress bar
+    const progressBar = document.querySelector('.progress-bar');
+    if (progressBar) {
+        progressBar.style.width = `${Math.min(progressPercentage, 100)}%`;
+        progressBar.setAttribute('data-width', progressPercentage);
+    }
+    
+    // Update progress percentage text if it exists
+    const percentageText = document.querySelector('.donation-percentage');
+    if (percentageText) {
+        percentageText.textContent = `${progressPercentage}%`;
+    }
+    
+    // Add pulse effect if close to goal
+    if (progressPercentage >= 90) {
+        progressBar?.classList.add('pulse-glow');
+    }
+    
+    console.log(`Donation progress updated: $${formattedCurrent} / $${formattedGoal} (${progressPercentage}%)`);
+}
+
+// Load donation progress when page loads
+document.addEventListener('DOMContentLoaded', loadDonationProgress);
+
+// Refresh donation progress every 5 minutes
+setInterval(loadDonationProgress, 5 * 60 * 1000);
+
 // ========== Scroll Reveal ==========
 const reveals = document.querySelectorAll('.reveal');
 
@@ -44,7 +108,7 @@ const progressBars = document.querySelectorAll('.progress-bar');
 const progressObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const width = entry.target.dataset.width;
+            const width = entry.target.dataset.width || entry.target.style.width.replace('%', '');
             entry.target.style.width = width + '%';
             progressObserver.unobserve(entry.target);
         }
