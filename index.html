@@ -515,9 +515,16 @@
       e.preventDefault();
       document.getElementById('payment-title').textContent = 'Venmo Payment';
       document.getElementById('payment-content').innerHTML = `
-        <div class="text-center text-yellow-100">
-          <p class="text-lg mb-4">🚧 Venmo details coming soon!</p>
-          <p class="text-sm">Please use PayPal or Zelle for now.</p>
+        <div class="text-center">
+          <div class="bg-white rounded-lg p-3 mb-4 inline-block">
+            <img src="images/venmo-qr.jpg" alt="Venmo QR Code" class="w-40 h-40 rounded-lg">
+          </div>
+          <div class="text-white space-y-2">
+            <p><strong class="text-gold-300">Venmo:</strong> @Sharaf-Ahmed-82</p>
+            <p><strong class="text-gold-300">Name:</strong> Sharaf Ahmed</p>
+            <p class="text-sm text-cyan-100">📱 Scan QR or search @Sharaf-Ahmed-82</p>
+            <p class="text-sm text-cyan-100">💬 Include "Rawdah Mosque" in memo</p>
+          </div>
         </div>
       `;
       document.getElementById('payment-details').classList.remove('hidden');
